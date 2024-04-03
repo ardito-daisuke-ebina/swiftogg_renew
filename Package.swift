@@ -4,10 +4,10 @@ import PackageDescription
 let package = Package(
     name: "SwiftOGG",
     platforms: [
-        .iOS(.v10), .macOS(.v10_15),
+        .iOS(.v13),
     ],
     products: [
-        .library(name: "SwiftOGG", targets: ["SwiftOGG"]),
+        .library(name: "SwiftOGG", targets: ["SwiftOGG", "Copustools"]),
     ],
     dependencies: [
         .package(
@@ -22,8 +22,7 @@ let package = Package(
     targets: [
         // To debug with a local framework
 //        .binaryTarget(name: "YbridOpus", path: "YbridOpus.xcframework"),
-        .target(name: "Copustools", path: "Sources/SupportingFiles/Dependencies/Copustools"),
+        .target(name: "Copustools", path: "Sources/SupportingFiles/Dependencies/Copustools", publicHeadersPath: "include", cSettings: [.headerSearchPath("include")]),
         .target(name: "SwiftOGG", dependencies: ["YbridOpus", "YbridOgg", "Copustools"], path: "Sources/SwiftOGG"),
-        .testTarget(name: "EncoderDecoderTests", dependencies: ["SwiftOGG"], resources: [.process("Resources")]),
     ]
 )
