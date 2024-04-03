@@ -18,6 +18,15 @@
           "revision": "11f1887767cbc87c4b64b789ee830b779cc744cb",
           "version": "0.8.4"
         }
+      },
+      {
+        "package": "Copustools",
+        "repositoryURL": "https://github.com/ardito-daisuke-ebina/swift-ogg.git",
+        "state": {
+          "branch": null,
+          "revision": "b9bc81ecd6d0418f8a756afbec627c7a9272b606",
+          "version": "1.0.1"
+        }
       }
     ]
   },
